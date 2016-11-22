@@ -1,9 +1,29 @@
-var express = require("express")
+var express       = require("express")
+var bodyParser    = require("body-parser")
+var mongoose      = require("./db/connection.js")
+var hbs           = require("hbs")
+
 var app = express()
 
+var Drink = mongoose.model("Drink")
 
-app.get("/", (req, res) => {
-  res.send("hello world")
+app.set("port", process.env.PORT || 3001);
+app.set("view engine", "hbs");
+
+
+app.use(express.static(__dirname + '/public'))
+// app.use("/assets", express.static("public"));
+app.use(bodyParser.json({extended: true}));  // handles json post requests
+app.use(bodyParser.urlencoded({extended: true}));  // handles form submissions
+
+
+
+app.get("/drinks", function(req, res) {
+  Drink.find({}).then(function(drinks) {
+    res.render("drinks-index", {
+      drinks: drinks
+    })
+  })
 })
 
 

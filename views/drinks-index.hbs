@@ -1,0 +1,11 @@
+<h2>{{drinks.length}} Open Bars and/or Brunches</h2>
+{{#each drinks as |drink index|}}
+<h3>
+  {{drink.restaurant_name}}
+</h3>
+<p>Brunch or Open Bar? {{drink.type}}</p>
+<p>Start Time: {{drink.time_start}}{{start_meridiem}}</p>
+<p>End Time: {{drink.time_end}}</p>
+<p>Price: ${{drink.price}}</p>
+<p>Address: {{drink.address}}</p>
+{{/each}}

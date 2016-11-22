@@ -16,6 +16,7 @@ var DrinkSchema = new mongoose.Schema(
 );
 
 mongoose.model("Drink", DrinkSchema);
+
 if(process.env.NODE_ENV == "production"){
   mongoose.connect(process.env.MONGOLAB_URL);
 } else {
