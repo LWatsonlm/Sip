@@ -33,7 +33,18 @@ app.get("/drinks/:restaurant_name", function(req, res) {
   })
 })
 
+app.post("/drinks", function(req, res) {
+  Drink.create(req.body.drink).then(function(drink) {
+    res.redirect("/drinks/" + drink.restaurant_name)
+  })
+})
+
+app.post("/drinks/:restaurant_name", function(req, res) {
+  Drink.findOneAndUpdate({restaurant_name: req.params.restaurant_name}, req.body.drink, {new: true}).then(function(drink) {
+    res.redirect("/drinks/" + drink.restaurant_name)
+  }) 
+})
 
 app.listen(3000, () => {
-  console.log("app listening on port 3000!!");
+  console.log("it's aliiiivee on 3000!!");
 })
