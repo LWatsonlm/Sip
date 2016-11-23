@@ -7,7 +7,7 @@
     "address": "2450 18th Street NW Washington, DC 20009",
     "time_start": 9,
     "time_end": 11,
-    "start_meridiem": "pm"
+    "meridiem": "pm"
   },
   {
     "restaurant_name": "Kabin Lounge DC",
@@ -17,7 +17,7 @@
     "address": "1337 Connecticut Avenue Washington, DC 20036",
     "time_start": 10,
     "time_end": 11,
-    "start_meridiem": "pm"
+    "meridiem": "pm"
   },
   {
     "restaurant_name": "Dirty Bar",
@@ -27,7 +27,7 @@
     "address": "1223 Connecticut Avenue NW, Washington, DC 20036",
     "time_start": 11,
     "time_end": 12,
-    "start_meridiem": "pm"
+    "meridiem": "pm"
   },
   {
     "restaurant_name": "Bar 7",
@@ -37,7 +37,7 @@
     "address": "1015 7th St NW, Washington, DC 20001",
     "time_start": 10,
     "time_end": 11,
-    "start_meridiem": "pm"
+    "meridiem": "pm"
   },
   {
     "restaurant_name": "L8 Lounge",
@@ -47,7 +47,7 @@
     "address": "727 15th ST NW Washington, DC 20005",
     "time_start": 10,
     "time_end": 11,
-    "start_meridiem": "pm"
+    "meridiem": "pm"
   },
   {
     "restaurant_name": "DC Harvest",
@@ -57,7 +57,7 @@
     "address": "517 H St NE, Washington, DC 20002",
     "time_start": 11,
     "time_end": 2.30,
-    "start_meridiem": "am"
+    "meridiem": "am"
   },
   {
     "restaurant_name": "Madhatter",
@@ -67,7 +67,7 @@
     "address": "1319 Connecticut Ave NW Washington, DC 20036",
     "time_start": 11,
     "time_end": 3,
-    "start_meridiem": "am"
+    "meridiem": "am"
   },
   {
     "restaurant_name": "Boundary Stone Public House",
@@ -77,7 +77,7 @@
     "address": "116 Rhode Island Ave NW Washington, D.C. 20001",
     "time_start": 11,
     "time_end": 2,
-    "start_meridiem": "am"
+    "meridiem": "am"
   },
   {
     "restaurant_name": "Level One",
@@ -87,7 +87,7 @@
     "address": "1639 R St NW Washington, D.C. 20009",
     "time_start": 11,
     "time_end": 4,
-    "start_meridiem": "am"
+    "meridiem": "am"
   },
   {
     "restaurant_name": "The Fainting Goat",
@@ -97,7 +97,7 @@
     "address": "1330 U Street NW Washington, D.C. 20009",
     "time_start": 11,
     "time_end": 3,
-    "start_meridiem": "am"
+    "meridiem": "am"
   },
   {
     "restaurant_name": "Sign of The Whale",
@@ -107,6 +107,6 @@
     "address": "1825 M Street NW, Washington, DC, 20036",
     "time_start": 11,
     "time_end": 3,
-    "start_meridiem": "am"
+    "meridiem": "am"
   }
 ]

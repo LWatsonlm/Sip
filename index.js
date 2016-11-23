@@ -17,7 +17,6 @@ app.use(bodyParser.json({extended: true}));  // handles json post requests
 app.use(bodyParser.urlencoded({extended: true}));  // handles form submissions
 
 
-
 app.get("/drinks", function(req, res) {
   Drink.find({}).then(function(drinks) {
     res.render("drinks-index", {
@@ -26,6 +25,13 @@ app.get("/drinks", function(req, res) {
   })
 })
 
+app.get("/drinks/:restaurant_name", function(req, res) {
+  Drink.findOne({restaurant_name: req.params.restaurant_name}).then(function(drink) {
+    res.render("drink-show", {
+      drink: drink
+    })
+  })
+})
 
 
 app.listen(3000, () => {

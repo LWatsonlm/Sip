@@ -1,0 +1,11 @@
+{{#unless drink}}
+<h2>That Restaurant couldn't be found!</h2>
+{{else}}
+
+<h2>{{drink.restaurant_name}} has {{drink.type}} on {{drink.day}}s</h2>
+<h3>Details:</h3>
+<p>Start Time: {{drink.time_start}}{{meridiem}}</p>
+<p>End Time: {{drink.time_end}}</p>
+<p>Price: ${{drink.price}}</p>
+<p>Address: {{drink.address}}</p>
+{{/unless}}
