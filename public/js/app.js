@@ -6,6 +6,8 @@ angular
   ])
   .config([
     "$stateProvider",
+    "$locationProvider", // turning on HTML5 mode
+    "$urlRouterProvider", // adding redirect to root route
     RouterFunction
   ])
   .factory("Drink", [
@@ -26,7 +28,8 @@ angular
     showFunction
   ])
 
-  function RouterFunction ($stateProvider) {
+  function RouterFunction ($stateProvider, $locationProvider, $urlRouterProvider) {
+    $locationProvider.html5Mode(true) // to remove the /#/ from URL
     $stateProvider
       .state("welcome", {
         url: "/",
@@ -44,6 +47,7 @@ angular
         controller: "showController",
         controllerAs: "vm"
       })
+    $urlRouterProvider.otherwise("/sip")  
   }
 
   function drinkFunction($resource) {

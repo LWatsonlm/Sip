@@ -14,10 +14,6 @@ app.use(express.static(__dirname + '/public'))   // what's the difference?
 app.use("/assets", express.static("public"));   // ^
 app.use(bodyParser.json({extended: true}));  // handles json post requests
 
-app.get("/", function(req, res) {
-  res.render("drinks")
-})
-
 app.get("/api/drinks", function(req, res) {
   Drink.find({}).then(function(drinks) {
       res.json(drinks)
@@ -36,10 +32,20 @@ app.post("/api/drinks", function(req, res) {
   })
 })
 
+app.delete("/api/drinks/:restaurant_name", function(req, res) {
+  Drink.findOneAndRemove({restaurant_name: req.params.restaurant_name}).then(function() {
+    res.json({success: true})
+  })
+})
+
 app.put("/api/drinks/:restaurant_name", function(req, res) {
   Drink.findOneAndUpdate({restaurant_name: req.params.restaurant_name}, req.body, {new: true}).then(function(drink) {
     res.json(drink)
   })
+})
+
+app.get("*/", function(req, res) {
+  res.render("drinks")
 })
 
 app.listen(3000, () => {
