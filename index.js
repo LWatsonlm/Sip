@@ -19,31 +19,33 @@ app.get("/", function(req, res) {
   res.render("drinks")
 })
 
-app.get("/drinks", function(req, res) {
+app.get("/api/drinks", function(req, res) {
   Drink.find({}).then(function(drinks) {
     res.render("drinks-index", {
       drinks: drinks
     })
+      res.json(drinks)
   })
 })
 
-app.get("/drinks/:restaurant_name", function(req, res) {
+app.get("/api/drinks/:restaurant_name", function(req, res) {
   Drink.findOne({restaurant_name: req.params.restaurant_name}).then(function(drink) {
     res.render("drink-show", {
       drink: drink
     })
+    res.json(drink)
   })
 })
 
-app.post("/drinks", function(req, res) {
+app.post("/api/drinks", function(req, res) {
   Drink.create(req.body.drink).then(function(drink) {
-    res.redirect("/drinks/" + drink.restaurant_name)
+    res.json(drink)
   })
 })
 
-app.post("/drinks/:restaurant_name", function(req, res) {
+app.put("/api/drinks/:restaurant_name", function(req, res) {
   Drink.findOneAndUpdate({restaurant_name: req.params.restaurant_name}, req.body.drink, {new: true}).then(function(drink) {
-    res.redirect("/drinks/" + drink.restaurant_name)
+    res.json(drink)
   })
 })
 

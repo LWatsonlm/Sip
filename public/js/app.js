@@ -25,3 +25,7 @@ angular
         controllerAs: "vm"
       })
   }
+  
+  // function indexFunction () {
+  //   console.log("index function");
+  // }
