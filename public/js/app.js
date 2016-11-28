@@ -68,4 +68,12 @@ angular
   function showFunction(Drink, $state, $stateParams) {
     console.log("show me the savings");
     this.drink = Drink.get({restaurant_name: $stateParams.restaurant_name})
+    this.update = function() {
+      this.drink.$update({restaurant_name: $stateParams.restaurant_name})
+    }
+    this.destroy = function() {
+      this.drink.$delete({restaurant_name: $stateParams.restaurant_name}).then(function() {
+        $state.go("index")
+      })
+    }
   }

@@ -37,7 +37,7 @@ app.post("/api/drinks", function(req, res) {
 })
 
 app.put("/api/drinks/:restaurant_name", function(req, res) {
-  Drink.findOneAndUpdate({restaurant_name: req.params.restaurant_name}, req.body.drink, {new: true}).then(function(drink) {
+  Drink.findOneAndUpdate({restaurant_name: req.params.restaurant_name}, req.body, {new: true}).then(function(drink) {
     res.json(drink)
   })
 })
