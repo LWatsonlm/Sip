@@ -2,7 +2,6 @@ angular
   .module("Sip", [
     "ui.router",
     "ngResource",
-    "uiGmapgoogle-maps"
   ])
   .config([
     "$stateProvider",
@@ -66,7 +65,6 @@ angular
         $state.go("show", {restaurant_name: drink.restaurant_name})
       })
     }
-    $scope.map = { center: { latitude: 45, longitude: -73}, zoom: 8};
   }
 
   function showFunction(Drink, $state, $stateParams) {

@@ -1,3 +1,20 @@
+<div class="btn-group" data-toggle="buttons">
+
+    <label class="btn btn-primary" ng-model="bigData.breakfast" btn-checkbox>
+      Breakfast
+    </label>
+
+    <label class="btn btn-primary" ng-model="bigData.lunch" btn-checkbox>
+      Lunch
+    </label>
+
+    <label class="btn btn-primary" ng-model="bigData.dinner" btn-checkbox>
+      Dinner
+    </label>
+
+</div>
+
+
 <h1>{{vm.drinks.length}} drink specials in DC</h1>
 <div class="drinks">
   <p>Search Query: {{searchDrinks}}</p>
@@ -23,8 +40,3 @@
   <input type="hidden" ng-model="vm.newDrink.votes" />
   <button type="submit">Add New Restaurant</button>
 </form>
-
-
-<div id="map_canvas" ng-controller="indexController">
-  <ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>
-</div>
