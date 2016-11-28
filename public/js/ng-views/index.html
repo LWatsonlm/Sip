@@ -1,6 +1,9 @@
 <h1>{{vm.drinks.length}} drink specials in DC</h1>
 <div class="drinks">
-  <div data-ng-repeat="drink in vm.drinks">
+  <p>Search Query: {{searchDrinks}}</p>
+  <input type="text" placeholder="Search The List" ng-model="searchDrinks" />
+
+  <div data-ng-repeat="drink in vm.drinks | filter:searchDrinks">
     <h2><a data-ui-sref="show({restaurant_name: drink.restaurant_name})">{{drink.restaurant_name}}</a></h2>
     <p>every {{drink.day}} at {{drink.time_start}}</p>
   </div>

@@ -47,7 +47,7 @@ angular
         controller: "showController",
         controllerAs: "vm"
       })
-    $urlRouterProvider.otherwise("/sip")  
+    $urlRouterProvider.otherwise("/sip")
   }
 
   function drinkFunction($resource) {
