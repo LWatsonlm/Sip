@@ -1,8 +1,9 @@
 <h1>{{vm.drinks.length}} drink specials in DC</h1>
 <div class="drinks">
-  <p data-ng-repeat="drink in vm.drinks">
-    <a data-ng-sref="show">{{drink.restaurant_name}}</a> every {{drink.day}} at {{drink.time_start}}
-  </p>
+  <div data-ng-repeat="drink in vm.drinks">
+    <a data-ng-sref="show({restaurant_name: drink.restaurant_name})">{{drink.restaurant_name}}</a>
+    <p>every {{drink.day}} at {{drink.time_start}}</p>
+  </div>
 </div>
 
 
@@ -18,6 +19,6 @@
   <input type="number" name="drink[time_end]" placeholder="End Time" />
   <input type="number" name="drink[price]" placeholder="($)Price" />
   <input type="text" name="drink[address]" placeholder="Full Address" />
-  <input type="hidden" name="drink[votes]" default= 0  />
+  <input type="hidden" name="drink[votes]" />
   <button type="submit">Add New Restaurant</button>
 </form>

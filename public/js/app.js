@@ -13,10 +13,13 @@ angular
   ])
   .controller("indexController", [
     "Drink",
+    "$state",
+    "$sce",
     indexFunction
   ])
   .controller("showController", [
     "Drink",
+    "$state",
     "$stateParams",
     showFunction
   ])
@@ -48,12 +51,12 @@ angular
     });
   }
 
-  function indexFunction(Drink) {
-    console.log("index controller baby");
+  function indexFunction(Drink, $state, $sce) {
+    console.log("index controller");
     this.drinks = Drink.query()
   }
 
-  function showFunction(Drink, $stateParams) {
-    console.log("show me the money, honey");
-    this.drink = Drink.get({restaurant_name: $stateParams.restaurant_name}) // would google or look up old references
+  function showFunction(Drink, $state, $stateParams) {
+    console.log("show me the money");
+    this.drink = Drink.get({restaurant_name: $stateParams.restaurant_name})
   }
