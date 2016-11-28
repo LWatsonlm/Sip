@@ -13,7 +13,6 @@ app.set("view engine", "hbs");
 app.use(express.static(__dirname + '/public'))   // what's the difference?
 app.use("/assets", express.static("public"));   // ^
 app.use(bodyParser.json({extended: true}));  // handles json post requests
-app.use(bodyParser.urlencoded({extended: true}));  // handles form submissions
 
 app.get("/", function(req, res) {
   res.render("drinks")
@@ -21,24 +20,18 @@ app.get("/", function(req, res) {
 
 app.get("/api/drinks", function(req, res) {
   Drink.find({}).then(function(drinks) {
-    res.render("drinks-index", {
-      drinks: drinks
-    })
       res.json(drinks)
   })
 })
 
 app.get("/api/drinks/:restaurant_name", function(req, res) {
   Drink.findOne({restaurant_name: req.params.restaurant_name}).then(function(drink) {
-    res.render("drink-show", {
-      drink: drink
-    })
     res.json(drink)
   })
 })
 
 app.post("/api/drinks", function(req, res) {
-  Drink.create(req.body.drink).then(function(drink) {
+  Drink.create(req.body).then(function(drink) {
     res.json(drink)
   })
 })

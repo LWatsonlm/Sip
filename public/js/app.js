@@ -1,7 +1,8 @@
 angular
   .module("Sip", [
     "ui.router",
-    "ngResource"
+    "ngResource",
+    "uiGmapgoogle-maps"
   ])
   .config([
     "$stateProvider",
@@ -15,6 +16,7 @@ angular
     "Drink",
     "$state",
     "$sce",
+    "$scope",
     indexFunction
   ])
   .controller("showController", [
@@ -51,12 +53,19 @@ angular
     });
   }
 
-  function indexFunction(Drink, $state, $sce) {
+  function indexFunction(Drink, $state, $sce, $scope) {
     console.log("index controller");
     this.drinks = Drink.query()
+    this.newDrink = new Drink()
+    this.create = function () {
+      this.newDrink.$save().then(function(drink) {
+        $state.go("show", {restaurant_name: drink.restaurant_name})
+      })
+    }
+    $scope.map = { center: { latitude: 45, longitude: -73}, zoom: 8};
   }
 
   function showFunction(Drink, $state, $stateParams) {
-    console.log("show me the money");
+    console.log("show me the savings");
     this.drink = Drink.get({restaurant_name: $stateParams.restaurant_name})
   }

@@ -1,8 +1,13 @@
+<div ng-if="!vm.drink">
+  <h2>That Restaurant Doesn't Exist!</h2>
+</div>
 
-  <h2>{{vm.drinks.restaurant_name}} has {{vm.drinks.type}} on {{vm.drinks.day}}</h2>
+<div ng-if="vm.drink">
+  <h2>{{vm.drink.restaurant_name}} has {{vm.drink.type}} on {{vm.drink.day}}</h2>
 
   <h3>Details:</h3>
-  <p>Start Time: {{vm.drinks.time_start}}{{vm.drinks.meridiem}}</p>
-  <p>End Time: {{vm.drinks.time_end}}</p>
-  <p>Price: ${{vm.drinks.price}}</p>
-  <p>Address: {{vm.drinks.address}}</p>
+  <p>Start Time: {{vm.drink.time_start}}{{vm.drink.meridiem}}</p>
+  <p>End Time: {{vm.drink.time_end}}</p>
+  <p>Price: ${{vm.drink.price}}</p>
+  <p>Address: {{vm.drink.address}}</p>
+</div>
