@@ -9,7 +9,7 @@
   <p>Start Time: {{vm.drink.time_start}}{{vm.drink.meridiem}}</p>
   <p>End Time: {{vm.drink.time_end}}</p>
   <p>Price: ${{vm.drink.price}}</p>
-  <p>Address: {{vm.drink.address}}</p>
+  <address>Address: {{vm.drink.address}}</address>
 
   <h3>Is something wrong with this post? Fix it:</h3>
   <form class="edit-drink">
@@ -23,8 +23,8 @@
     <input type="number" ng-model="vm.drink.time_end" placeholder="End Time" value="{{vm.drink.time_end}}" />
     <input type="number" ng-model="vm.drink.price" placeholder="($)Price" value="{{vm.drink.price}}" />
     <input type="text" ng-model="vm.drink.address" placeholder="Full Address" value="{{vm.drink.address}}" />
-    <button data-ng-click="vm.update()">Save</button>
-    <button data-ng-click="vm.destroy()">Delete This Restaurant</button>
+    <button data-ng-click="vm.update()" class="btn btn-primary">Save</button>
+    <button data-ng-click="vm.destroy()" class="btn btn-danger">Delete This Restaurant</button>
   </form>
 </div>
 
