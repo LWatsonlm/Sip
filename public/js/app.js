@@ -2,6 +2,7 @@ angular
   .module("Sip", [
     "ui.router",
     "ngResource",
+    "ui.bootstrap"
   ])
   .config([
     "$stateProvider",
@@ -63,6 +64,18 @@ angular
     this.create = function () {
       this.newDrink.$save().then(function(drink) {
         $state.go("show", {restaurant_name: drink.restaurant_name})
+
+    // BUTTONS ======================
+
+    // define some random object and button values
+    $scope.bigData = {};
+
+    $scope.bigData.breakfast = false;
+    $scope.bigData.lunch = false;
+    $scope.bigData.dinner = false;
+    console.log("can yous see me?");
+    // COLLAPSE =====================
+    $scope.isCollapsed = false;
       })
     }
   }
