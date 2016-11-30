@@ -64,6 +64,9 @@ angular
     this.create = function () {
       this.newDrink.$save().then(function(drink) {
         $state.go("show", {restaurant_name: drink.restaurant_name})
+      })
+    }
+  }
 
 
   function showFunction(Drink, $state, $stateParams) {
