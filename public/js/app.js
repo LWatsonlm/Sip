@@ -50,7 +50,6 @@ angular
   }
 
   function drinkFunction($resource) {
-    console.log("drink factory function");
     return $resource("/api/drinks/:restaurant_name", {}, {
       update: {method: "PUT"}
     });

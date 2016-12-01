@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   background-color: pink;
+  padding-left: .5%;
 }
 
 /*body {
@@ -10,9 +11,15 @@ body {
   padding: 0;
 }*/
 
+.container {
+  padding: 1%;
+  width: 500px;
+  height: 400px;
+}
+
 #map {
   background: red;
-  position: relative;
+  position: relative !important;
   min-width: 200px;
   width: 500px;
   min-height: 200px;
@@ -22,9 +29,4 @@ body {
 
 .sidebar {
   width: 33.3333%;
-}
-
-.container {
-  width: 500px;
-  height: 400px;
 }
