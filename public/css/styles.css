@@ -11,10 +11,10 @@ body {
 }*/
 
 #map {
-  background: blue;
-  position: inherit !important;
+  background: red;
+  position: relative;
   min-width: 200px;
-  width: 50%;
+  width: 500px;
   min-height: 200px;
   height: 80%;
   border: 1px solid blue;
@@ -22,4 +22,9 @@ body {
 
 .sidebar {
   width: 33.3333%;
+}
+
+.container {
+  width: 500px;
+  height: 400px;
 }
