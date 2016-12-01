@@ -5,8 +5,8 @@ body {
 #map {
   background: blue;
   border: 2px dashed;
-  width: 60%;
-  height: 50%;
+  width: 100px;
+  height: 100px;
   position: static !important;
 }
 
