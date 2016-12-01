@@ -8,7 +8,10 @@
     "time_start": 9,
     "time_end": 11,
     "meridiem": "pm",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.042711, 38.921932]
+    }
   },
   {
     "restaurant_name": "Kabin Lounge DC",
@@ -19,7 +22,10 @@
     "time_start": 10,
     "time_end": 11,
     "meridiem": "pm",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.042116, 38.908321]
+    }
   },
   {
     "restaurant_name": "Dirty Bar",
@@ -30,7 +36,10 @@
     "time_start": 11,
     "time_end": 12,
     "meridiem": "pm",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.041252, 38.906683]
+    }
   },
   {
     "restaurant_name": "Bar 7",
@@ -41,7 +50,10 @@
     "time_start": 10,
     "time_end": 11,
     "meridiem": "pm",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.021666, 38.903497]
+    }
   },
   {
     "restaurant_name": "L8 Lounge",
@@ -52,7 +64,10 @@
     "time_start": 10,
     "time_end": 11,
     "meridiem": "pm",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.033235, 38.899573]
+    }
   },
   {
     "restaurant_name": "DC Harvest",
@@ -63,7 +78,10 @@
     "time_start": 11,
     "time_end": 2.30,
     "meridiem": "am",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-76.998807, 38.899971]
+    }
   },
   {
     "restaurant_name": "Madhatter",
@@ -74,7 +92,10 @@
     "time_start": 11,
     "time_end": 3,
     "meridiem": "am",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.041983, 38.907895]
+    }
   },
   {
     "restaurant_name": "Boundary Stone Public House",
@@ -85,7 +106,10 @@
     "time_start": 11,
     "time_end": 2,
     "meridiem": "am",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.012679, 38.915245]
+    }
   },
   {
     "restaurant_name": "Level One",
@@ -96,7 +120,10 @@
     "time_start": 11,
     "time_end": 4,
     "meridiem": "am",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.038193, 38.912781]
+    }
   },
   {
     "restaurant_name": "The Fainting Goat",
@@ -107,7 +134,10 @@
     "time_start": 11,
     "time_end": 3,
     "meridiem": "am",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.03084, 38.916774]
+    }
   },
   {
     "restaurant_name": "Sign of The Whale",
@@ -118,6 +148,9 @@
     "time_start": 11,
     "time_end": 3,
     "meridiem": "am",
-    "votes": 0
+    "votes": 0,
+    "location": {
+      "type": [-77.04278, 38.905932]
+    }
   }
 ]
