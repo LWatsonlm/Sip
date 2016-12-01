@@ -12,7 +12,10 @@ var DrinkSchema = new mongoose.Schema(
     time_end: Number,
     meridiem: String,
     votes: Number,
-    location: {type: [Number], required: true}, // [Long, Lat]
+    location: {
+      lat: Number,
+      lng: Number
+    }
   }
 );
 
