@@ -26,10 +26,6 @@ angular
     "$stateParams",
     showFunction
   ])
-  .controller("mapController", [
-    "Drink",
-    initMap
-  ])
 
   function RouterFunction ($stateProvider, $locationProvider, $urlRouterProvider) {
     $locationProvider.html5Mode(true) // to remove the /#/ from URL
@@ -62,6 +58,17 @@ angular
 
   function indexFunction(Drink, $state, $sce, $scope) {
     console.log("index controller");
+    this.initMap = initMap
+      function initMap() {
+        console.log(document.getElementById('map'))
+        var map;
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8,
+        });
+
+      }
     this.drinks = Drink.query()
     this.newDrink = new Drink()
     this.create = function () {
@@ -84,15 +91,3 @@ angular
       })
     }
   }
-
-    function initMap(Drink) {
-        var latlng = new google.maps.LatLng(-34.397, 150.644);
-        var myOptions = {
-            zoom: 8,
-            center: latlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-                myOptions);
-        google.maps.event.addDomListener(window, "load", initialize);
-    }
