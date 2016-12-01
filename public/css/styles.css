@@ -1,15 +1,25 @@
+html,
 body {
+  height: 100%;
   background-color: pink;
 }
 
+/*body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}*/
+
 #map {
   background: blue;
-  border: 2px dashed;
-  width: 100px;
-  height: 100px;
-  position: static !important;
+  position: inherit !important;
+  min-width: 200px;
+  width: 50%;
+  min-height: 200px;
+  height: 80%;
+  border: 1px solid blue;
 }
 
-#map_wrapper {
-    height: 400px;
+.sidebar {
+  width: 33.3333%;
 }
