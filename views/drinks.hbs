@@ -5,6 +5,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="/assets/js/app.js"></script>
 <link rel="stylesheet" type="text/css" href="css/styles.css">
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGSyE80f7jwVMtDiGDi3CXGWkT9HE9Gaw&callback=initMap">
+</script>
 
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container-fluid">
@@ -32,8 +35,6 @@
 
 <div ng-app="Sip">
   <main data-ui-view></main>
-
-  <!-- the controller will get overwritten every time a new coller and template are assigned -->
 </div>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGSyE80f7jwVMtDiGDi3CXGWkT9HE9Gaw&callback=initMap"></script>
+
+  <!-- the controller will get overwritten every time a new controller and template are assigned -->

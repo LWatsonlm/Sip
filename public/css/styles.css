@@ -3,6 +3,10 @@ body {
 }
 
 #map {
-  height: 100%;
-  width: auto;
+  width: 60%;
+  height: 50%;
+}
+
+#map_wrapper {
+    height: 400px;
 }

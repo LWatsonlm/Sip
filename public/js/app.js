@@ -85,31 +85,14 @@ angular
     }
   }
 
-  function initMap(Drink) {
-    var map;
-    window.onload = function() {
-      console.log(document.getElementById('map'));
-      map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2,
-        center: new google.maps.LatLng(2.8,-187.3),
-        mapTypeId: 'terrain'
-      });
-      // Create a <script> tag and set the API URL as the source.
-      var script = document.createElement('script');
-      script.src = 'http://localhost:3000/api/drinks/';
-      document.getElementsByTagName('head')[0].appendChild(script);
-
-      // Loop through the results array and place a marker for each
-      // set of coordinates.
-      window.eqfeed_callback = function(results) {
-        for (var i = 0; i < results.features.length; i++) {
-          var coords = results.features[i].geometry.coordinates;
-          var latLng = new google.maps.LatLng(coords[1],coords[0]);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
-        }
-      }
+    function initMap(Drink) {
+        var latlng = new google.maps.LatLng(-34.397, 150.644);
+        var myOptions = {
+            zoom: 8,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+                myOptions);
+        google.maps.event.addDomListener(window, "load", initialize);
     }
-  }
