@@ -1,8 +1,7 @@
 html,
 body {
   height: 100%;
-  padding-left: .5%;
-  padding-right: .5;
+  padding: .5% .5% 0 .5%;
 }
 
 /*body {
@@ -20,6 +19,7 @@ body {
   height: 900px;
   width: 100%;
   padding-top: 1%;
+  order: 2;
 }
 
 #map {
@@ -27,7 +27,6 @@ body {
   width: 95%;
   position: relative !important;
   min-width: 200px;
-  /*width: 500px;*/
   min-height: 200px;
   height: 100%;
   top: 0;
@@ -36,8 +35,31 @@ body {
 
 .sidebar {
   width: 33.3333%;
+  order: 1;
 }
 
-.form {
+/*.form {
   order: 3;
+}*/
+
+.img-rounded {
+  height: 50%;
+  width: 50%;
+}
+
+#hero {
+  font-size: 10em;
+}
+
+#hero a:hover {
+  text-decoration: none;
+  cursor: crosshair;
+}
+
+#sidekick {
+  font-size: 3em;
+}
+
+.welcome {
+  align-items: center;
 }
