@@ -71,6 +71,13 @@ angular
         })
       })
     })
+    this.drinks = Drink.query()
+    this.newDrink = new Drink()
+    this.create = function () {
+      this.newDrink.$save().then(function(drink) {
+        $state.go("show", {restaurant_name: drink.restaurant_name})
+      })
+    }
   }
 
 
