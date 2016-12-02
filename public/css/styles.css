@@ -4,12 +4,6 @@ body {
   padding: .5% .5% 0 .5%;
 }
 
-/*body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}*/
-
 .master {
   display: flex;
 }
@@ -58,8 +52,22 @@ body {
 
 #sidekick {
   font-size: 3em;
+  padding: 0 30% 0 30%;
+  /*text-align: center;*/
+}
+
+.link:hover {
+  cursor: crosshair;
 }
 
 .welcome {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
 }
+
+span {
+  color: #fff;
+}
+
+/*background-color: rgba(156, 241, 203,0.5);*/

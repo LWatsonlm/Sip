@@ -70,7 +70,7 @@ angular
       bars = response
       let map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
-        center: {lat: 38.910356, lng: -77.0292211},
+        center: {lat: 38.9064227, lng: -77.0284656},
       })
       bars.forEach((bar) => {
         new google.maps.Marker({

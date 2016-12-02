@@ -9,7 +9,7 @@
     </form>
 
     <div data-ng-repeat="drink in vm.drinks | filter:searchDrinks">
-      <h2><a data-ui-sref="show({restaurant_name: drink.restaurant_name})">{{drink.restaurant_name}}</a></h2>
+      <h2><a class="link" data-ui-sref="show({restaurant_name: drink.restaurant_name})">{{drink.restaurant_name}}</a></h2>
       <p>{{drink.type}} every {{drink.day}} at {{drink.time_start}}{{drink.meridiem}}. Price: ${{drink.price}}</p>
     </div>
   </div>
