@@ -80,6 +80,11 @@ angular
       })
     })
     this.drinks = Drink.query()
+      $(document).ready( function(e) {
+        $('#summary').hover( function( evt ) {
+          $('#detail').toggle();
+        });
+      })
     this.newDrink = new Drink()
     this.create = function () {
       this.newDrink.$save().then(function(drink) {

@@ -59,6 +59,13 @@ body {
   /*text-align: center;*/
 }
 
+#detail {
+    width: 300px;
+    height: 300px;
+    background: #fff200;
+    display: none;
+}
+
 .link:hover {
   cursor: crosshair;
 }
