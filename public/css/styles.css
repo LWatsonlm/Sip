@@ -1,3 +1,76 @@
+html,
 body {
-  background-color: pink;
+  height: 100%;
+  padding: .5% .5% 0 .5%;
 }
+
+.master {
+  display: flex;
+}
+
+.container {
+  padding: 1.5%;
+  height: 900px;
+  width: 100%;
+  padding-top: 1%;
+  order: 2;
+}
+
+#map {
+  background: grey;
+  width: 95%;
+  position: relative !important;
+  min-width: 200px;
+  min-height: 200px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar {
+  width: 35%;
+  order: 1;
+}
+
+.form {
+  margin: .9% 30% 0 12%;
+  background-color: #FED89D;
+  padding: 1% 2% 2% 3%;
+  border-radius: 10px;
+}
+
+.img-rounded {
+  height: 50%;
+  width: 50%;
+}
+
+#hero {
+  font-size: 10em;
+}
+
+#hero a:hover {
+  text-decoration: none;
+  cursor: crosshair;
+}
+
+#sidekick {
+  font-size: 3em;
+  padding: 0 30% 0 30%;
+  /*text-align: center;*/
+}
+
+.link:hover {
+  cursor: crosshair;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+}
+
+span {
+  color: #fff;
+}
+
+/*background-color: rgba(156, 241, 203,0.5);*/

@@ -3,26 +3,54 @@
 </div>
 
 <div ng-if="vm.drink">
-  <h2>{{vm.drink.restaurant_name}} has {{vm.drink.type}} on {{vm.drink.day}}</h2>
+  <h2>{{vm.drink.restaurant_name}} has {{vm.drink.type}} on {{vm.drink.day}}s</h2>
 
   <h3>Details:</h3>
-  <p>Start Time: {{vm.drink.time_start}}{{vm.drink.meridiem}}</p>
-  <p>End Time: {{vm.drink.time_end}}</p>
-  <p>Price: ${{vm.drink.price}}</p>
-  <address>Address: {{vm.drink.address}}</address>
+  <p class="lead">Start Time: {{vm.drink.time_start}}{{vm.drink.meridiem}}</p>
+  <p class="lead">End Time: {{vm.drink.time_end}}</p>
+  <p class="lead">Price: ${{vm.drink.price}}</p>
+  <p class="lead">Address: {{vm.drink.address}}</p>
 
-  <h3>Is something wrong with this post? Fix it:</h3>
-  <form class="edit-drink">
-    <input type="text" ng-model="vm.drink.restaurant_name" placeholder="Restaurant Name" value="{{vm.drink.restaurant_ng-model}}vm." />
-    <input type="radio" ng-model="vm.drink.type" value= "Open Bar" /> Open Bar <br />
-    <input type="radio" ng-model="vm.drink.type" value="Brunch" /> Brunch <br />
-    <input type="number" ng-model="vm.drink.time_start" placeholder="Start Time" value="{{vm.drink.time_start}}" />
-    <input type="text" ng-model="vm.drink.day" placeholder="What Day of The Week?" value="{{vm.drink.day}}" />
-    <input type="date" ng-model="vm.drink.date" value="{{vm.drink.date}}" /> If a one time thing, what day? <br />
-    <input type="text" ng-model="vm.drink.meridiem" max="2" placeholder="AM or PM"  value="{{vm.drink.meridiem}}" />
-    <input type="number" ng-model="vm.drink.time_end" placeholder="End Time" value="{{vm.drink.time_end}}" />
-    <input type="number" ng-model="vm.drink.price" placeholder="($)Price" value="{{vm.drink.price}}" />
-    <input type="text" ng-model="vm.drink.address" placeholder="Full Address" value="{{vm.drink.address}}" />
+<div class="form">
+  <h3 class="page-header">Is something wrong with this post? Fix it:</h3>
+  <form class="form-group">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="editName">Restaurant Name</label>
+      <input type="text" ng-model="vm.drink.restaurant_name" placeholder="Restaurant Name" value="{{vm.drink.restaurant_ng-model}}vm." />
+    </div>
+
+    <div class="form-group">
+      <label for="inputType">Open Bar or Brunch?</label><br />
+      <input type="radio" ng-model="vm.drink.type" value= "Open Bar" /> Open Bar <br />
+      <input type="radio" ng-model="vm.drink.type" value="Brunch" /> Brunch <br />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="editStartTime">Start Time?</label>
+      <input type="number" ng-model="vm.drink.time_start" placeholder="Start Time" value="{{vm.drink.time_start}}" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="editDayofWeek">Day of Week?</label>
+      <input type="text" ng-model="vm.drink.day" placeholder="What Day of The Week?" value="{{vm.drink.day}}" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="editMeridiem">AM or PM?</label>
+      <input type="text" ng-model="vm.drink.meridiem" max="2" placeholder="AM or PM"  value="{{vm.drink.meridiem}}" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="editTime">End Time</label>
+      <input type="number" ng-model="vm.drink.time_end" placeholder="End Time" value="{{vm.drink.time_end}}" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="editPrice">Price?</label>
+      <input type="number" ng-model="vm.drink.price" placeholder="($)Price" value="{{vm.drink.price}}" />
+    </div>
+
     <button data-ng-click="vm.update()" class="btn btn-primary">Save</button>
     <button data-ng-click="vm.destroy()" class="btn btn-danger">Delete This Restaurant</button>
   </form>

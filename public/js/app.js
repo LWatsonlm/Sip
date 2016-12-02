@@ -1,8 +1,7 @@
 angular
   .module("Sip", [
     "ui.router",
-    "ngResource",
-    "ui.bootstrap"
+    "ngResource"
   ])
   .config([
     "$stateProvider",
@@ -41,6 +40,14 @@ angular
         controller: "indexController",
         controllerAs: "vm"
       })
+      .state("about", {
+        url:"/sip/about",
+        templateUrl: "assets/js/ng-views/about.html"
+      })
+      .state("contact", {
+        url: "/sip/contact",
+        templateUrl: "assets/js/ng-views/contact.html"
+      })
       .state("show", {
         url: "/sip/:restaurant_name",
         templateUrl: "assets/js/ng-views/show.html",
@@ -51,14 +58,27 @@ angular
   }
 
   function drinkFunction($resource) {
-    console.log("drink factory function");
     return $resource("/api/drinks/:restaurant_name", {}, {
       update: {method: "PUT"}
     });
   }
 
+
   function indexFunction(Drink, $state, $sce, $scope) {
-    console.log("index controller");
+    let bars
+    Drink.query({}, (response) => {
+      bars = response
+      let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: {lat: 38.9064227, lng: -77.0284656},
+      })
+      bars.forEach((bar) => {
+        new google.maps.Marker({
+          position: bar.location,
+          map: map
+        })
+      })
+    })
     this.drinks = Drink.query()
     this.newDrink = new Drink()
     this.create = function () {
@@ -67,6 +87,7 @@ angular
       })
     }
   }
+
 
   function showFunction(Drink, $state, $stateParams) {
     console.log("show me the savings");
