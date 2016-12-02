@@ -12,7 +12,7 @@
       <p>every {{drink.day}} at {{drink.time_start}}</p>
     </div>
 
-
+<div class="form">
     <form ng-submit="vm.create()">
       <input type="text" ng-model="vm.newDrink.restaurant_name" placeholder="Restaurant Name" /><br />
       <input type="radio" ng-model="vm.newDrink.type" value="Open Bar" /> Open Bar <br />
@@ -27,6 +27,7 @@
       <input type="hidden" ng-model="vm.newDrink.votes" />
       <button type="submit">Add New Restaurant</button>
     </form>
+    </div>
   </div>
 
   <div class="container">
