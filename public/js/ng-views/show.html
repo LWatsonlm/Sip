@@ -1,8 +1,3 @@
-<div ng-if="!vm.drink">
-  <h2>That Restaurant Doesn't Exist!</h2>
-</div>
-
-<div ng-if="vm.drink">
   <h2>{{vm.drink.restaurant_name}} has {{vm.drink.type}} on {{vm.drink.day}}s</h2>
 
   <h3>Details:</h3>
@@ -10,6 +5,7 @@
   <p class="lead">End Time: {{vm.drink.time_end}}</p>
   <p class="lead">Price: ${{vm.drink.price}}</p>
   <p class="lead">Address: {{vm.drink.address}}</p>
+<!-- ======== the edit form ========= -->
 
 <div class="form">
   <h3 class="page-header">Is something wrong with this post? Fix it:</h3>
