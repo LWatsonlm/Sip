@@ -1,4 +1,6 @@
 <div class="master">
+
+  <!-- Begin the sidebar for drink specials  -->
   <div class="sidebar">
     <div class="page-header">
       <h1>{{vm.drinks.length}} Bottomless Drink Specials in DC</h1>
@@ -8,7 +10,9 @@
       <input type="text" class="form-control" placeholder="Search The List" ng-model="searchDrinks" >
     </form>
 
+    <!-- A scroll bar to handle a longer list easier -->
     <div style="height:585px; overflow-y: scroll;">
+      <!-- Search box for easy searching. Begin repeat through drink list -->
       <div data-ng-repeat="drink in vm.drinks | filter:searchDrinks">
         <h2 class="summary"><a class="link" data-ui-sref="show({restaurant_name: drink.restaurant_name})">{{drink.restaurant_name}}</a></h2>
         {{drink.type}} every {{drink.day}} at {{drink.time_start}}{{drink.meridiem}}. Price: ${{drink.price}}
@@ -17,14 +21,16 @@
   </div>
 
   <div class="container">
+    <!-- Init the google map -->
     <div id='map'></div>
   </div>
 </div>
 
+<!-- Form for new entries -->
 <div class="form">
   <div class="page-header">
-  <h2>Know about a good deal?</h2>
-  <p class="lead">Know a bottomless deal for under $15? Add it using this form:</p>
+    <h2>Know about a good deal?</h2>
+    <p class="lead">Know a bottomless deal for under $15? Add it using this form:</p>
   </div>
   <form ng-submit="vm.create()" class="form-group">
     <div class="form-group">

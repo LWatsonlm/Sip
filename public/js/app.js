@@ -66,41 +66,40 @@ angular
 
   function indexFunction(Drink, $state, $sce, $scope) {
     let bars
-    Drink.query({}, (response) => {
-      bars = response
-      let map = new google.maps.Map(document.getElementById('map'), {
+    Drink.query({}, (response) => {   // querying API
+      bars = response     // set the query to bars
+      let map = new google.maps.Map(document.getElementById('map'), {  // Init the Google Map from Google API
         zoom: 14,
         center: {lat: 38.9064227, lng: -77.0284656},
-      })
-      bars.forEach((bar) => {
+      })  // end of map options
+      bars.forEach((bar) => {       // for Each enum to go through all drinks in API
         new google.maps.Marker({
-          position: bar.location,
+          position: bar.location,   // find the Lat and Long from API and set a market for each positionn
           map: map
         })
       })
     })
     this.drinks = Drink.query()
       $(document).ready( function(e) {
-        $('#summary').hover( function( evt ) {
+        $('#summary').hover( function( evt ) {  // working on make details appear on hover
           $('#detail').toggle();
         });
       })
     this.newDrink = new Drink()
     this.create = function () {
-      this.newDrink.$save().then(function(drink) {
+      this.newDrink.$save().then(function(drink) {   // on form submit, save the data in database
         $state.go("show", {restaurant_name: drink.restaurant_name})
       })
     }
   }
 
 
-  function showFunction(Drink, $state, $stateParams) {
-    console.log("show me the savings");
+  function showFunction(Drink, $state, $stateParams) {   // for the show page
     this.drink = Drink.get({restaurant_name: $stateParams.restaurant_name})
-    this.update = function() {
+    this.update = function() {   // handles updates, updates from form and directly into database
       this.drink.$update({restaurant_name: $stateParams.restaurant_name})
     }
-    this.destroy = function() {
+    this.destroy = function() {  // handles deleting, and deletes from database
       this.drink.$delete({restaurant_name: $stateParams.restaurant_name}).then(function() {
         $state.go("index")
       })
