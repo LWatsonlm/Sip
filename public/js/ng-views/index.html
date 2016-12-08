@@ -8,9 +8,11 @@
       <input type="text" class="form-control" placeholder="Search The List" ng-model="searchDrinks" >
     </form>
 
-    <div data-ng-repeat="drink in vm.drinks | filter:searchDrinks">
-      <h2 class="summary"><a class="link" data-ui-sref="show({restaurant_name: drink.restaurant_name})">{{drink.restaurant_name}}</a></h2>
-      <p>{{drink.type}} every {{drink.day}} at {{drink.time_start}}{{drink.meridiem}}. Price: ${{drink.price}}</p>
+    <div style="height:585px; overflow-y: scroll;">
+      <div data-ng-repeat="drink in vm.drinks | filter:searchDrinks">
+        <h2 class="summary"><a class="link" data-ui-sref="show({restaurant_name: drink.restaurant_name})">{{drink.restaurant_name}}</a></h2>
+        {{drink.type}} every {{drink.day}} at {{drink.time_start}}{{drink.meridiem}}. Price: ${{drink.price}}
+      </div>
     </div>
   </div>
 
