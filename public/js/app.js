@@ -66,116 +66,40 @@ angular
 
   function indexFunction(Drink, $state, $sce, $scope) {
     let bars
-    Drink.query({}, (response) => {
-      bars = response
-      let map = new google.maps.Map(document.getElementById('map'), {
+    Drink.query({}, (response) => {   // querying API
+      bars = response     // set the query to bars
+      let map = new google.maps.Map(document.getElementById('map'), {  // Init the Google Map from Google API
         zoom: 14,
-        center: {lat: 38.9064227, lng: -77.0284656}, // the center of Thomas Circle, NW
-        title: 'Drink Specials in DC',
-        styles: [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
-            {
-              featureType: 'administrative.locality',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'poi',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'poi.park',
-              elementType: 'geometry',
-              stylers: [{color: '#263c3f'}]
-            },
-            {
-              featureType: 'poi.park',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#6b9a76'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry',
-              stylers: [{color: '#38414e'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#212a37'}]
-            },
-            {
-              featureType: 'road',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#9ca5b3'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry',
-              stylers: [{color: '#746855'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
-            },
-            {
-              featureType: 'road.highway',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#f3d19c'}]
-            },
-            {
-              featureType: 'transit',
-              elementType: 'geometry',
-              stylers: [{color: '#2f3948'}]
-            },
-            {
-              featureType: 'transit.station',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'geometry',
-              stylers: [{color: '#17263c'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
-            },
-            {
-              featureType: 'water',
-              elementType: 'labels.text.stroke',
-              stylers: [{color: '#17263c'}]
-            }
-          ]
-      })
-      bars.forEach((bar) => {
+        center: {lat: 38.9064227, lng: -77.0284656},
+      })  // end of map options
+      bars.forEach((bar) => {       // for Each enum to go through all drinks in API
         new google.maps.Marker({
-          position: bar.location, // lat and lng defined in response from API
+          position: bar.location,   // find the Lat and Long from API and set a market for each positionn
           map: map
         })
       })
     })
     this.drinks = Drink.query()
+      $(document).ready( function(e) {
+        $('#summary').hover( function( evt ) {  // working on make details appear on hover
+          $('#detail').toggle();
+        });
+      })
     this.newDrink = new Drink()
-    this.create = function () { // create new drink specials
-      this.newDrink.$save().then(function(drink) {
+    this.create = function () {
+      this.newDrink.$save().then(function(drink) {   // on form submit, save the data in database
         $state.go("show", {restaurant_name: drink.restaurant_name})
       })
     }
   }
 
 
-  function showFunction(Drink, $state, $stateParams, $scope) { //show function. Will like to make a modal in near future
-    console.log("show me the savings");
-    this.update = function() {
+  function showFunction(Drink, $state, $stateParams) {   // for the show page will like to make a modal in near future
+    this.drink = Drink.get({restaurant_name: $stateParams.restaurant_name})
+    this.update = function() {   // handles updates, updates from form and directly into database
       this.drink.$update({restaurant_name: $stateParams.restaurant_name})
     }
-    this.destroy = function() {
+    this.destroy = function() {  // handles deleting, and deletes from database
       this.drink.$delete({restaurant_name: $stateParams.restaurant_name}).then(function() {
         $state.go("index")
       })

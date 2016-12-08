@@ -33,7 +33,7 @@ body {
 }
 
 .form {
-  margin: .9% 30% 0 12%;
+  margin: .9% 20% 0 20%;
   background-color: #FED89D;
   padding: 1% 2% 2% 3%;
   border-radius: 10px;
@@ -56,6 +56,13 @@ body {
 #sidekick {
   font-size: 3em;
   padding: 0 30% 0 30%;
+}
+
+#detail {
+    width: 300px;
+    height: 300px;
+    background: #fff200;
+    display: none;
 }
 
 .link:hover {
