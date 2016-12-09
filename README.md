@@ -18,6 +18,16 @@ $ip is a full CRUD, MEAN Application with a Google Maps API. It's built with Ang
   2. When you click on a marker on the map, details appear regarding the location.
   3. Adding Google Places API, so users can search inside the Google Map for locations.
 
+## How To Run App
+```
+$ npm install
+```
+```
+$ mongod
+```
+```
+$ nodemon index.js
+```
 
 ## Screenshots of $ip
 ![alt text](public/images/$ip-homepage.png "$ip screenshot")
