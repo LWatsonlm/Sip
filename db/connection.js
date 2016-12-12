@@ -21,10 +21,5 @@ var DrinkSchema = new mongoose.Schema(
 
 mongoose.model("Drink", DrinkSchema);
 
-if(process.env.NODE_ENV == "production"){
-  mongoose.connect(process.env.MONGOLAB_URL);
-} else {
-  mongoose.connect("mongodb://localhost/sip");
-}
-
+mongoose.connect(process.env.heroku_p5r9xw54:ubfpcucg24oad59k2n8rhfghfv@ds133388.mlab.com:33388/heroku_p5r9xw54 || "mongodb://localhost/sip")
 module.exports = mongoose;
