@@ -8,11 +8,12 @@ var app = express()
 
 var Drink = mongoose.model("Drink")
 
-app.set("port", process.env.PORT || 3001);
+// app.set("port", process.env.PORT || 3001);
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/sip')
 app.set("view engine", "hbs");
 
-app.use(express.static(__dirname + '/public'))   // what's the difference?
-app.use("/assets", express.static("public"));   // ^
+app.use(express.static(__dirname + '/public'))
+app.use("/assets", express.static("public"));
 app.use(bodyParser.json({extended: true}));  // handles json post requests
 
 app.listen(app.get("port"), function(){
