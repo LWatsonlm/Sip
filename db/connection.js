@@ -21,8 +21,11 @@ var DrinkSchema = new mongoose.Schema(
 
 mongoose.model("Drink", DrinkSchema);
 
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/sip")
+if(process.env.NODE_ENV == "production"){
+  mongoose.connect(process.env.MONGOLAB_URI);
+}else{
+  mongoose.connect("mongodb://localhost/sip");
+}
 
 
 

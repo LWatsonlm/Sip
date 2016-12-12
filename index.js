@@ -15,6 +15,10 @@ app.use(express.static(__dirname + '/public'))   // what's the difference?
 app.use("/assets", express.static("public"));   // ^
 app.use(bodyParser.json({extended: true}));  // handles json post requests
 
+app.listen(app.get("port"), function(){
+  console.log("It's aliiive like in port!");
+});
+
 app.get("/api/drinks", function(req, res) {
   Drink.find({}).then(function(drinks) {
       res.json(drinks)
