@@ -1,4 +1,5 @@
 var express       = require("express")
+var cool          = require("cool-ascii-faces")
 var bodyParser    = require("body-parser")
 var mongoose      = require("./db/connection.js")
 var hbs           = require("hbs")
@@ -43,6 +44,10 @@ app.put("/api/drinks/:restaurant_name", function(req, res) {
     res.json(drink)
   })
 })
+
+app.get('/cool', function(request, response) {
+  response.send(cool());
+});
 
 app.get("*/", function(req, res) {
   res.render("drinks")
