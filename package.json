@@ -1,6 +1,11 @@
 {
   "name": "sip",
   "version": "1.0.0",
+  "engines": {
+    "node": "6.9.1",
+    "npm": "3.10.x"
+    }
+  }
   "description": "General Assembly Project 4",
   "main": "index.js",
   "scripts": {
