@@ -9,7 +9,7 @@ var app = express()
 var Drink = mongoose.model("Drink")
 
 // app.set("port", process.env.PORT || 3001);
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/sip')
+// mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/sip')
 app.set("view engine", "hbs");
 
 app.use(express.static(__dirname + '/public'))
