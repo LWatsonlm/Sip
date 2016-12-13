@@ -9,16 +9,16 @@ var app = express()
 var Drink = mongoose.model("Drink")
 
 // app.set("port", process.env.PORT || 3001);
-// mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/sip')
+mongoose.createConnection(process.env.MONGOLAB_URI || 'mongodb://localhost/sip' || 3001 || process.env.PORT);
 app.set("view engine", "hbs");
 
 app.use(express.static(__dirname + '/public'))
 app.use("/assets", express.static("public"));
 app.use(bodyParser.json({extended: true}));  // handles json post requests
 
-app.listen(app.get("port"), function(){
-  console.log("It's aliiive like in port!");
-});
+// app.listen(app.get("port"), function(){
+//   console.log("It's aliiive like in port!");
+// });
 
 app.get("/api/drinks", function(req, res) {
   Drink.find({}).then(function(drinks) {
