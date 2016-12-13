@@ -5,21 +5,20 @@ var mongoose      = require("./db/connection.js")
 var hbs           = require("hbs")
 
 var app = express()
-
 var Drink = mongoose.model("Drink")
 
-// app.set("port", process.env.PORT || 3001);
-mongoose.createConnection(process.env.MONGOLAB_URI || 'mongodb://localhost/sip' || 3001 || process.env.PORT);
+// sets and uses
+app.set("port", process.env.PORT || 3001)
 app.set("view engine", "hbs");
-
 app.use(express.static(__dirname + '/public'))
-app.use("/assets", express.static("public"));
 app.use(bodyParser.json({extended: true}));  // handles json post requests
 
-// app.listen(app.get("port"), function(){
-//   console.log("It's aliiive like in port!");
-// });
+// route to home/index
+app.get("*/", function(req, res) {
+  res.render("drinks")
+})
 
+// serve json
 app.get("/api/drinks", function(req, res) {
   Drink.find({}).then(function(drinks) {
       res.json(drinks)
@@ -53,11 +52,3 @@ app.put("/api/drinks/:restaurant_name", function(req, res) {
 app.get('/cool', function(request, response) {
   response.send(cool());
 });
-
-app.get("*/", function(req, res) {
-  res.render("drinks")
-})
-
-app.listen(3000, () => {
-  console.log("it's aliiiivee on 3000!!");
-})

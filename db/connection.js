@@ -20,5 +20,9 @@ var DrinkSchema = new mongoose.Schema(
 );
 
 mongoose.model("Drink", DrinkSchema);
+mongoose.Promise = global.Promise
+
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/sip');
 
 module.exports = mongoose;
