@@ -3,25 +3,26 @@ var cool          = require("cool-ascii-faces")
 var bodyParser    = require("body-parser")
 var mongoose      = require("./db/connection.js")
 var hbs           = require("hbs")
-let server        = require('http').Server(app);
 
 var app = express()
 var Drink = mongoose.model("Drink")
 var port = process.env.PORT || 3001
 
+app.set('port', (process.env.PORT || 5000));
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.json({extended: true}));  // handles json post requests
 
 
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
-
 // route to home/index
 app.get("*/", function(req, res) {
   res.render("drinks")
 })
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
 
 // serve json
 app.get("/api/drinks", function(req, res) {
