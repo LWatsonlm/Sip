@@ -7,7 +7,7 @@ let server        = require('http').Server(app);
 
 var app = express()
 var Drink = mongoose.model("Drink")
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3001
 
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + '/public'))
