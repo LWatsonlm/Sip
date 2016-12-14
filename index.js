@@ -7,7 +7,7 @@ var hbs           = require("hbs")
 var app = express()
 var Drink = mongoose.model("Drink")
 
-// sets and uses
+
 app.set("port", process.env.PORT || 3000)
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + '/public'))
