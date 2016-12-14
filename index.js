@@ -15,7 +15,7 @@ app.use(bodyParser.json({extended: true}));  // handles json post requests
 
 
 // route to home/index
-app.get("*/", function(req, res) {
+app.get("/", function(req, res) {
   res.render("drinks")
 })
 
