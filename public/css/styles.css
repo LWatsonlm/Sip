@@ -44,6 +44,11 @@ body {
   width: 50%;
 }
 
+#latoya {
+  height: 350px;
+  width: auto;
+}
+
 #hero {
   font-size: 10em;
 }
