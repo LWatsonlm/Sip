@@ -14,8 +14,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
-        <li><a ui-sref="about">About</a></li>
-        <li><a ui-sref="contact">Contact</a></li>
+        <li><a data-ui-sref="about">About</a></li>
+        <li><a data-ui-sref="contact">Contact</a></li>
 </nav>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -33,7 +33,5 @@
     </script>
 
 
-<div ng-app="Sip">
-  <main data-ui-view></main>
+<div data-ui-view>
 </div>
-  <!-- the controller will get overwritten every time a new controller and template are assigned -->

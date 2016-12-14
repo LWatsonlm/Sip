@@ -29,7 +29,8 @@ angular
   ])
 
   function RouterFunction ($stateProvider, $locationProvider, $urlRouterProvider) {
-    // $locationProvider.html5Mode(true) // to remove the /#/ from URL
+    $locationProvider.html5Mode(true) // to remove the /#/ from URL
+    console.log("hitting router");
     $stateProvider
       .state("welcome", {
         url: "/",
@@ -65,6 +66,7 @@ angular
   }
 
   function indexFunction(Drink, $state, $sce, $scope) {
+    console.log("index controller");
     let bars
     Drink.query({}, (response) => {   // querying API
       bars = response     // set the query to bars

@@ -10,8 +10,12 @@ var Drink = mongoose.model("Drink")
 
 app.set("port", (process.env.PORT || 5000));
 app.set("view engine", "hbs");
+app.use("/assets", express.static("public")) // using public folder as assets
 
-app.use("/assets", express.static("public"))
+app.use('/js', express.static("public"));
+app.use('/css', express.static("public"));
+app.use('/images', express.static("public"));
+
 
 app.use(bodyParser.json({extended: true}));  // handles json post requests
 
@@ -21,9 +25,6 @@ app.get("/", function(req, res) {
   res.render("drinks")
 })
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
 
 
 // serve json
@@ -59,4 +60,9 @@ app.put("/api/drinks/:restaurant_name", function(req, res) {
 
 app.get('/cool', function(request, response) {
   response.send(cool());
+});
+
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
