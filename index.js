@@ -11,7 +11,7 @@ var Drink = mongoose.model("Drink")
 app.set('port', (process.env.PORT || 5000));
 app.set("view engine", "hbs");
 
-app.use(express.static("/assets", __dirname + '/public'))
+app.use( "/assets", express.static("public") )
 
 app.use(bodyParser.json({extended: true}));  // handles json post requests
 
