@@ -11,7 +11,7 @@ Every night, my friends and I researched bars with the best drink specials. The 
 $ip will only show you bottomless drink specials that are under $15. In most cases, the drink special is FREE!
 
 ## Technologies Used
-$ip is a full CRUD, MEAN Application with a Google Maps API. It's built with AngualarJS, MongoDB, Mongoose, Express, Nodejs and Google Maps API for Plotting Data on the Map.
+$ip is a full CRUD, MEAN Application with a Google Maps API. It's built with AngualarJS, MongoDB, Mongoose, Express, Nodejs and Google Maps API for Plotting Data on the Map. I created my own API that you can view/use here: https://sip-dc.herokuapp.com/api/drinks
 
 ## Upcoming Features
   1. Remove the show view and corresponding show router and use modals instead, making it a true SPA.
